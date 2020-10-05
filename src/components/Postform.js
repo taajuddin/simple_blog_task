@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {setdata} from '../action/postaction'
 import './main.css'
 
-function Postform(props) {
+const Postform=(props)=> {
     
     const initialInputState = {title: "", body:""}
 

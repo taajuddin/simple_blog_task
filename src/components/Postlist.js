@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {FaSearch} from 'react-icons/fa'
 import './main.css'
 
-function Postlist(props) {
+const Postlist=(props)=> {
     const initialInputState = {search: ""}
 
     const [value, setValue] = useState(initialInputState)
