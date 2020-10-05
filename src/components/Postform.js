@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 //import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setdata} from '../action/postaction'
-//import './main.css'
+import './main.css'
 
 function Postform(props) {
     
