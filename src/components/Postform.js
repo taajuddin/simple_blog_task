@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 //import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setdata} from '../action/postaction'
+//import './main.css'
 
 function Postform(props) {
     
@@ -34,7 +35,7 @@ function Postform(props) {
             <div>
             <div style={{marginTop:"10px"}}>
               
-                    <h5 className="post_heading">ADD POSTS</h5>
+                    <h5 className="post_heading">Add Posts</h5>
                     <form className="form" onSubmit={handleSubmit}>
                         
                             <input type="text" style={{width: "80%"}} name="title" placeholder="Enter Post Title" value={title}  onChange={handleChange} className="form-control" required/><br/>

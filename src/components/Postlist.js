@@ -19,7 +19,8 @@ function Postlist(props) {
     
     
         return (
-            <div style={{marginLeft:"0px", height: "200px"}}>
+            <div style={{marginLeft:"10px", height: "200px"}}>
+            <h5 className="post_heading">Search & View Post</h5>
                 <form className="form-group">
                     <span class="form-control-feedback" style={{paddingTop:"9px"}}><FaSearch/></span>
                     <input  type="search"  value ={search}

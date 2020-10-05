@@ -4,7 +4,7 @@ import Postlist from './components/Postlist'
 import {BrowserRouter,Link,Route,} from 'react-router-dom'
 //import home from './components/home'
 import Home from './components/Home'
-import './index.css';
+
 
 
 function App() {

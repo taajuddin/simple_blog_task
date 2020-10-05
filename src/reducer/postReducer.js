@@ -1,8 +1,7 @@
 const userReducer=(state=[],action)=>{
-    switch( state,action.type)
+    switch(action.type)
     {
-        case 'SET_POST':{
-            // console.log("reducers",action.payload)
+        case "SET_POST":{
             return state.concat(action.payload)
         }
        default:{

@@ -1,3 +1,7 @@
+*{
+  margin:0px;
+  padding:0px;
+}
 .form-control-feedback {
     position: absolute;
     z-index: 2;
@@ -117,8 +121,8 @@ input[type=text] {
     
     .post_heading {
     text-align:center;
-    font-weight:400;
-    font-size:40px;
+    font-weight:600;
+    font-size:30px;
     color:#000000;
     }
     
