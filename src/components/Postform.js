@@ -1,49 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 //import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setdata} from '../action/postaction'
 
-class Postform extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            title:"",
-            body:""
-        }
-    }
-    handleChange=(e)=>
+function Postform(props) {
+    
+    const initialInputState = {title: "", body:""}
+
+    const [value, setValue] = useState(initialInputState)
+
+    const {title, body} = value;
+
+    const handleChange=(e)=>
     {
-        this.setState({[e.target.name]: e.target.value})
+        setValue({...value, [e.target.name]: e.target.value})
     }
-    handleSubmit=(e)=>{
+
+    const handleSubmit=(e)=>{
         e.preventDefault()
        const  formdata={
-            title:this.state.title,
-             body:this.state.body
+            title: title,
+             body: body
         }
         console.log("form data",formdata)
-        this.props.dispatch(setdata(formdata))
-        this.setState({
-            body: "",
-            title: ""
-        })
+        props.dispatch(setdata(formdata))
+        
+        setValue({...value, title: "", body: ""})
     }
     
-    render() {
+    
         
         return (
             <div>
-            <div className="post-container" style={{marginTop:"10px"}}>
+            <div style={{marginTop:"10px"}}>
               
                     <h5 className="post_heading">ADD POSTS</h5>
-                    <form className="form" onSubmit={this.handleSubmit}>
+                    <form className="form" onSubmit={handleSubmit}>
                         
-                            <label>title</label><br/>
-                            <input type="text" style={{width: "80%"}} name="title" placeholder="Enter Post Title" value={this.state.value}  onChange={this.handleChange} className="form-control" required/><br/>
+                            <input type="text" style={{width: "80%"}} name="title" placeholder="Enter Post Title" value={title}  onChange={handleChange} className="form-control" required/><br/>
                         
                        
-                            <label>body</label><br/>
-                            <textarea rows="5" cols="28" name="body" placeholder="Enter Body" value={this.state.body} onChange={this.handleChange}  required/><br/>
+                            <textarea rows="5" cols="28" name="body" placeholder="Enter Body" value={body} onChange={handleChange}  required/><br/>
                     
                         <input type="submit" value="publish"/>
                     </form>
@@ -52,7 +49,7 @@ class Postform extends Component {
                 
             </div>
         );
-    }
+    
 }
 
 export default connect() (Postform);
